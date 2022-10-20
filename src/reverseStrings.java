@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class dayOne // Reverse a string without using functions
+public class reverseStrings // Reverse a string without using functions
 {
     // First way: reversing each character from string.
     public static void main(String[] args) {
