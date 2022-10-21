@@ -1,10 +1,18 @@
 import java.util.Scanner;
+<<<<<<< HEAD
 import java.util.Stack;
 
 public class palidrome
 {
     //check the palidrome by using a reverse comparison
     public static void main(String[] args) {
+=======
+
+public class palidrome
+{
+    public static void main(String[] args) {
+
+>>>>>>> CodeQD/master
         System.out.print("Enter any string : ");
         Scanner in = new Scanner(System.in);
 
@@ -22,6 +30,7 @@ public class palidrome
                 break;
             }
         }
+<<<<<<< HEAD
         if(isPalindrome) {
             System.out.println("String is a palindrome.");
         }
@@ -66,6 +75,11 @@ public class palidrome
             System.out.println("String is a palindrome.");
         } else {
             System.out.println("String is not a palindrome.");
+=======
+
+        if(isPalindrome) {
+            System.out.println("String is a palindrome.");
+>>>>>>> CodeQD/master
         }
     }
 }
