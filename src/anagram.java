@@ -1,47 +1,125 @@
 import java.util.Arrays;
 
-//Anagram --> two strings that contain the same characters but in a different order. ie: keep & peek.
 public class anagram
 {
-    //check for Anagram using sort() and equal() methods
-    static void itsAnagram(String s1, String s2)
+    static void method1(String s1, String s2)
     {
-    //first, remove all white spaces from both strings ( s1, s2)
-        String copys1 = s1.replaceAll("\\s","");
-        String copys2 = s2.replaceAll("\\s","");
-        //set the initial status as True
+        //Removing all white spaces from s1 and s2
+        String copyOfs1 = s1.replaceAll("\\s", "");
+        String copyOfs2 = s2.replaceAll("\\s", "");
+
+        //Initially setting status as true
         boolean status = true;
-        if(copys1.length() != copys2.length())
+
+        if(copyOfs1.length() != copyOfs2.length())
         {
-            //set the status false if s1 and s2 have different lengths
+            //Setting status as false if copyOfs1 and copyOfs2 doesn't have same length
             status = false;
         }
         else
         {
-            //change the case of characters of both copys1,copys2 and convert
-            char[] s1Array = copys1.toLowerCase().toCharArray();
-            char[] s2Array = copys2.toLowerCase().toCharArray();
-            //sort both s1 and s2 arrays
+            //Changing the case of characters of both copyOfs1 and copyOfs2 and converting them to char array
+            char[] s1Array = copyOfs1.toLowerCase().toCharArray();
+            char[] s2Array = copyOfs2.toLowerCase().toCharArray();
+
+            //Sorting both s1Array and s2Array
             Arrays.sort(s1Array);
             Arrays.sort(s2Array);
-            //check if both s1 and s2 arrays are equal
+
+            //Checking whether s1Array and s2Array are equal
             status = Arrays.equals(s1Array, s2Array);
         }
-        //what output should appear:
+
+        //Output
         if(status)
         {
-            System.out.println(s1+" and "+s2+" are Anagrams!");
+            System.out.println(s1+" -AND- "+s2+" are Anagrams");
         }
         else
         {
-            System.out.println(s1+" and "+s2+" are -NOT- Anagrams!");
+            System.out.println(s1+" -AND- "+s2+" are -NOT- Anagrams");
         }
-    //testing anagram program with string arguments
-        static void ifAnagram(String[] args)
-        {
-            itsAnagram("Mother in Law", "Monster in Law");
-            itsAnagram("WHO's the BOSS", "WHO's There?");
-            itsAnagram("cAt", "tAc");
-        }
+    }
+
+    public static void main(String[] args)
+    {
+        method1("Mother In Law", "Hitler Woman");
+        method1("keEp", "peeK");
+        method1("Debit Card", "Bad Credit");
+        method1("School MASTER", "The ClassROOM");
+        method1("DORMITORY", "Dirty Room");
+        method1("ASTRONOMERS", "NO MORE STARS");
+        method1("Toss", "Shot");
+
+    //Check for Anagram using an Iterative method
+            static void method2 (String str1, String str2)
+            {
+                //Removing white spaces from s1 and s2 and changing case to lower
+
+                String copyOfs1 = str1.replaceAll("\\s", "").toLowerCase();
+
+                String copyOfs2 = str2.replaceAll("\\s", "").toLowerCase();
+
+                //Initially setting status as true
+
+                boolean status = true;
+
+                if(copyOfs1.length() != copyOfs2.length())
+                {
+                    //Setting status as false if copyOfs1 and copyOfs2 doesn't have same length
+
+                    status = false;
+                }
+                else
+                {
+                    //Converting copyOfs1 to char array
+
+                    char[] s1ToArray = copyOfs1.toCharArray();
+
+                    //Checking whether each character of s1ToArray is present in copyOfs2
+
+                    for (char c : s1ToArray)
+                    {
+                        int index = copyOfs2.indexOf(c);
+
+                        if(index != -1)
+                        {
+                            //If character is present in copyOfs2, removing that char from copyOfs2
+
+                            copyOfs2 = copyOfs2.substring(0, index)+copyOfs2.substring(index+1, copyOfs2.length());
+                        }
+                        else
+                        {
+                            //If character is not present in copyOfs2, setting status as false and breaking the loop
+
+                            status = false;
+
+                            break;
+                        }
+                    }
+                }
+
+                //Output
+
+                if(status)
+                {
+                    System.out.println(str1+" and "+str2+" are anagrams");
+                }
+                else
+                {
+                    System.out.println(str1+" and "+str2+" are not anagrams");
+                }
+            }
+
+            public static void main(String[] args)
+            {
+                method2("Mother In Law", "Hitler Woman");
+                method2("keEp", "peeK");
+                method2("SiLeNt CAT", "LisTen AcT");
+                method2("Debit Card", "Bad Credit");
+                method2("Toss", "Shot");
+                method2("joy", "enjoy");
+            }
+
     }
 }
