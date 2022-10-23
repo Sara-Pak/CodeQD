@@ -52,7 +52,7 @@ public class anagram
         method1("Toss", "Shot");
 
     //Check for Anagram using an Iterative method
-
+/*
             {
                 //Removing white spaces from s1 and s2 and changing case to lower
 
@@ -119,6 +119,6 @@ public class anagram
             method1("Toss", "Shot");
             method1("joy", "enjoy");
         }
-
+*/
     }
 }
