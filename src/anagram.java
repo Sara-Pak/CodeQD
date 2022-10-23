@@ -52,13 +52,15 @@ public class anagram
         method1("Toss", "Shot");
 
     //Check for Anagram using an Iterative method
-            static void method2 (String str1, String str2)
+         class AnagramProgram
+        {
+            static void method2(String s1, String s2)
             {
                 //Removing white spaces from s1 and s2 and changing case to lower
 
-                String copyOfs1 = str1.replaceAll("\\s", "").toLowerCase();
+                String copyOfs1 = s1.replaceAll("\\s", "").toLowerCase();
 
-                String copyOfs2 = str2.replaceAll("\\s", "").toLowerCase();
+                String copyOfs2 = s2.replaceAll("\\s", "").toLowerCase();
 
                 //Initially setting status as true
 
@@ -103,11 +105,11 @@ public class anagram
 
                 if(status)
                 {
-                    System.out.println(str1+" and "+str2+" are anagrams");
+                    System.out.println(s1+" and "+s2+" are anagrams");
                 }
                 else
                 {
-                    System.out.println(str1+" and "+str2+" are not anagrams");
+                    System.out.println(s1+" and "+s2+" are not anagrams");
                 }
             }
 
@@ -120,6 +122,6 @@ public class anagram
                 method2("Toss", "Shot");
                 method2("joy", "enjoy");
             }
-
+        }
     }
 }
