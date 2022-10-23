@@ -52,9 +52,7 @@ public class anagram
         method1("Toss", "Shot");
 
     //Check for Anagram using an Iterative method
-         class AnagramProgram
-        {
-            static void method2(String s1, String s2)
+
             {
                 //Removing white spaces from s1 and s2 and changing case to lower
 
@@ -113,15 +111,14 @@ public class anagram
                 }
             }
 
-            public static void main(String[] args)
-            {
-                method2("Mother In Law", "Hitler Woman");
-                method2("keEp", "peeK");
-                method2("SiLeNt CAT", "LisTen AcT");
-                method2("Debit Card", "Bad Credit");
-                method2("Toss", "Shot");
-                method2("joy", "enjoy");
-            }
+        {
+            method1("Mother In Law", "Hitler Woman");
+            method1("keEp", "peeK");
+            method1("SiLeNt CAT", "LisTen AcT");
+            method1("Debit Card", "Bad Credit");
+            method1("Toss", "Shot");
+            method1("joy", "enjoy");
         }
+
     }
 }
