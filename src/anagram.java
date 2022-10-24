@@ -30,9 +30,9 @@ public class anagram {
             System.out.println(s1 + " -AND- " + s2 + " are -NOT- Anagrams");
         }
     }
-
+/*
     //Check for Anagram using an Iterative method
-    static void method2(String s1m2, String s2m2)
+    static void method2(String s1m2, String s2m2);
 
     //Removing white spaces from s1m2 and s2m2 and changing case to lower
     String copyOfs1m2 = s1m2.replaceAll("\\s", "").toLowerCase();
@@ -91,5 +91,5 @@ public class anagram {
         method1("Toss", "Shot");
     }
 
-
+*/
 }
